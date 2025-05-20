@@ -7,48 +7,49 @@
         
     </head>
     <body>
-        <div class="container">
-            <h1 id="Main-Heading">Flashcard App</h1>
+    <div class="container">
+    <h1>Flashcard App</h1>
 
-            <div class="input-form">
-                <input type="text" id="english" placeholder="English" />
-                <input type="text" id="spanish" placeholder="Spanish" />
-                <button onclick="addFlashcard()">Add Flashcard</button>
-                <button id="startButton" onclick="startStudy()" disabled>Start Study</button>
-                <button id="editDeckButton" onclick="openEditModal()">Edit Deck</button>
-            </div>
+    <div class="input-form">
+      <input type="text" id="english" placeholder="English" />
+      <input type="text" id="spanish" placeholder="Spanish" />
+      <button onclick="addFlashcard()">Add Flashcard</button>
+      <button id="startButton" onclick="startStudy()" disabled>Start Study</button>
+      <button id="editDeckButton" onclick="openEditModal()">Edit Deck</button>
+    </div>
 
-            <div class="shuffle-container">
-                <label><input type="checkbox" id="shuffleCheckbox"> Shuffle cards</label>
-            </div>
+    <div class="faceup-toggle-container">
+      <label id="englishToggle"><input type="checkbox" onclick="toggleFaceup('english')"> English face-up</label>
+      <label id="spanishToggle"><input type="checkbox" onclick="toggleFaceup('spanish')"> Spanish face-up</label>
+    </div>
 
-            <div class="card" id="flashcard" onclick="flipCard()" style="display:none;"></div>
+    <div class="card" id="flashcard" onclick="flipCard()" style="display:none;"></div>
 
-            <div class="controls" id="rankings" style="display:none;">
-            <button onclick="rankCard(1)">1: Unsure</button>
-            <button onclick="rankCard(2)">2: Still Learning</button>
-            <button onclick="rankCard(3)">3: Solid</button>
-            <button onclick="rankCard(4)">4: Perfected</button>
-            </div>
+    <div class="controls" id="rankings" style="display:none;">
+      <button onclick="rankCard(1)">1: Unsure</button>
+      <button onclick="rankCard(2)">2: Still Learning</button>
+      <button onclick="rankCard(3)">3: Solid</button>
+      <button onclick="rankCard(4)">4: Perfected</button>
+    </div>
 
-            <div class="progress" id="progress">
-            <div class="progress-bar" id="progressBar"></div>
-            </div>
+    <div class="progress" id="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
 
-            <div class="session-counter" id="sessionCounter"></div>
-        </div>
+    <div class="session-counter" id="sessionCounter"></div>
+  </div>
 
-        <div id="editModal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeEditModal()">×</span>
-                <h2>Edit Deck</h2>
-                <div id="editorList"></div>
-                <div class="modal-buttons">
-                    <button onclick="saveFlashcards(); closeEditModal()">Save</button>
-                    <button onclick="closeEditModal()">Cancel</button>
-                </div>
-            </div>
-        </div>
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeEditModal()">×</span>
+      <h2>Edit Deck</h2>
+      <div id="editorList"></div>
+      <div class="modal-buttons">
+        <button onclick="saveFlashcards(); closeEditModal()">Save</button>
+        <button onclick="closeEditModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
 
         <script src="index.js" defer></script>
     </body>

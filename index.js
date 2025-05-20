@@ -5,6 +5,18 @@ let showEnglish = true;
 let perfectedCount = 0;
 let totalSessionCards = 0;
 
+let faceUpLanguage = 'english';
+
+function toggleFaceup(lang) {
+    faceUpLanguage = lang;
+    document.getElementById('englishToggle').classList.toggle('disabled', lang !== 'english');
+    document.getElementById('spanishToggle').classList.toggle('disabled', lang !== 'spanish');
+    document.querySelector('#englishToggle input').checked = lang === 'english';
+    document.querySelector('#spanishToggle input').checked = lang === 'spanish';
+}
+
+toggleFaceup('english');
+
 if (flashcards.length > 0) {
     document.getElementById('startButton').disabled = false;
 }
@@ -28,16 +40,10 @@ function addFlashcard() {
 
 function startStudy() {
     if (flashcards.length === 0) return;
+    const reviewAll = document.getElementById('reviewAllCheckbox').checked;
     tempDeck = flashcards.map(card => ({ ...card, bucket: 1 }));
     perfectedCount = 0;
     totalSessionCards = tempDeck.length;
-    const shuffle = document.getElementById('shuffleCheckbox').checked;
-    if (shuffle) {
-    for (let i = tempDeck.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [tempDeck[i], tempDeck[j]] = [tempDeck[j], tempDeck[i]];
-    }
-    }
     document.getElementById('flashcard').style.display = 'block';
     document.getElementById('rankings').style.display = 'flex';
     document.getElementById('progress').style.display = 'block';
@@ -57,7 +63,7 @@ function nextCard() {
     }
     tempDeck.sort((a, b) => a.bucket - b.bucket);
     currentCard = tempDeck[0];
-    showEnglish = true;
+    showEnglish = (faceUpLanguage === 'english');
     updateFlashcard();
     updateCounter();
 }
@@ -92,7 +98,7 @@ function rankCard(rank) {
 }
 
 function updateProgress() {
-    const total = flashcards.length;
+    const total = totalSessionCards;
     const percent = (perfectedCount / total) * 100;
     document.getElementById('progressBar').style.width = `${percent}%`;
 }
