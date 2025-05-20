@@ -40,7 +40,6 @@ function addFlashcard() {
 
 function startStudy() {
     if (flashcards.length === 0) return;
-    const reviewAll = document.getElementById('reviewAllCheckbox').checked;
     tempDeck = flashcards.map(card => ({ ...card, bucket: 1 }));
     perfectedCount = 0;
     totalSessionCards = tempDeck.length;
