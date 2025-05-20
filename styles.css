@@ -1,0 +1,123 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 2rem;
+    font-size: 1rem;
+    text-align: center;
+}
+#Main-Heading {
+    color: #3E8EDE;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+.card, .controls button, input, button, .progress {
+    border-radius: 12px;
+}
+.card {
+    background: white;
+    padding: 2rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+}
+.controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+.progress {
+    margin-top: 1rem;
+    background: #ddd;
+    overflow: hidden;
+    height: 20px;
+    display: none;
+}
+.progress-bar {
+    background: #4caf50;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+}
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: #d9d7d7;
+    cursor: not-allowed;
+}
+.shuffle-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.session-counter {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+.modal-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+}
+.modal-content h2 {
+    margin-top: 0;
+}
+.editor-card {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.editor-card input {
+    flex: 1;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+@keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; }
+}
