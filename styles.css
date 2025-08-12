@@ -4,14 +4,19 @@
 }
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background: #232323
+    background-color: #232323;
     margin: 0;
     padding: 2rem;
     font-size: 1rem;
 }
 .container {
+    background-color: gray;
     max-width: 600px;
     margin: auto;
+    padding: 20px;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    border-radius: 16px;
 }
 .card, .controls button, input, button, .progress {
     border-radius: 12px;
