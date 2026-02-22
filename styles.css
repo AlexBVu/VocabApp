@@ -1,10 +1,10 @@
 #Main-Heading {
-    color: #4c4e50;
-    text-align: center;
+    color: #ff0000;
+    text-align: center; 
 }
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #232323;
+    background-color: #8a2525;
     margin: 0;
     padding: 2rem;
     font-size: 1rem;
