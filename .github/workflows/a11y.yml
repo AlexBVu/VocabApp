@@ -14,5 +14,4 @@ jobs:
         uses: zachkklein/WCAG_PR_Checker@main
         with:
           URLS: '/'
-          BUILD_COMMAND: 'echo "nothing to build"'
           BUILD_DIR: '.'
