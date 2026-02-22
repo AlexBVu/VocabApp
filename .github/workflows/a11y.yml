@@ -10,24 +10,9 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Checkout PR branch
-        uses: actions/checkout@v4
-        with:
-          path: pr-branch
-
-      - name: Checkout base branch
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.base_ref }}
-          path: main-branch
-
       - name: Run accessibility check
         uses: zachkklein/WCAG_PR_Checker@main
         with:
-          mode: pr-check
-          build-command: 'echo "nothing to build"'  # replace with your build command, or omit for static sites
-          output-dir: '.'              # replace with your build output directory
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
+          URLS: '/'
+          BUILD_COMMAND: 'echo "nothing to build"'
+          BUILD_DIR: '.'
