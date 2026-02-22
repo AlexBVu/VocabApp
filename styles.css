@@ -1,5 +1,5 @@
 #Main-Heading {
-    color: #aaafb3;
+    color: #4c4e50;
     text-align: center;
 }
 body {
@@ -22,7 +22,7 @@ body {
     border-radius: 12px;
 }
 .card {
-    background: white;
+    background: rgb(59, 56, 56);
     padding: 2rem;
     margin-top: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
