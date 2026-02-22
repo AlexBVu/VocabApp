@@ -14,4 +14,4 @@ jobs:
         uses: zachkklein/WCAG_PR_Checker@main
         with:
           URLS: '/'
-          BUILD_DIR: '.'
+          BUILD_DIR: 'public'

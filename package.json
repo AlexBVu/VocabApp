@@ -2,7 +2,7 @@
   "name": "vocab_tester",
   "version": "1.0.0",
   "private": true,
-  "scripts" : {
-        "build": "echo no build needed"
+  "scripts": {
+    "build": "mkdir -p public && cp index.html styles.css index.js public/"
   }
 }
